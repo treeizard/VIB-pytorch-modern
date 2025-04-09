@@ -2,18 +2,24 @@
 <br>
 
 ### Overview
-Pytorch implementation of Deep Variational Information Bottleneck([paper], [original code])
+More Modern Adaptation of the Pytorch implementation of Deep Variational Information Bottleneck([paper], [original code])
+
+Original Pytorch Implementation: ([https://github.com/1Konny/VIB-pytorch])
 
 ![ELBO](misc/ELBO.PNG)
 ![monte_carlo](misc/monte_carlo.PNG)
 <br>
 
-### Dependencies
+### Setup
+1. Download Mini Conda: https://www.anaconda.com/docs/getting-started/miniconda/main
+2. Create and activate Conda Environment
 ```
-python 3.6.4
-pytorch 0.3.1.post2
-tensorboardX(optional)
-tensorflow(optional)
+conda create -n myenv python=3.11
+conda activate myenv
+```
+3. Install the required packages:
+```
+pip install -r requirements.txt
 ```
 <br>
 
@@ -21,6 +27,10 @@ tensorflow(optional)
 1. train
 ```
 python main.py --mode train --beta 1e-3 --tensorboard True --env_name [NAME]
+```
+2. TensorBoard
+```
+tensorboard --logdir=summary/[NAME]/
 ```
 2. test
 ```
